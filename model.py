@@ -133,7 +133,7 @@ class DeepConvNet(nn.Module):
                     stride=1,
                     padding=0,
                 ),
-                BatchNorm2d(num_features=channels[i + 1]),
+                BatchNorm2d(num_features=channels[i + 1], eps=1e-5, momentum=0.1),
                 act_func,
                 MaxPool2d(kernel_size=(1, 2)),
                 Dropout(p=dropout),
